@@ -1,0 +1,191 @@
+.registrar-jugadores {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
+}
+
+.page-header {
+  margin-bottom: 32px;
+}
+
+.page-header h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.page-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.page-divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 28px;
+}
+
+.rj-config {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+
+.rj-config label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 12px;
+  color: var(--text-heading);
+}
+
+.rj-config-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.rj-config-row input {
+  width: 88px;
+  padding: 9px 12px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--text-heading);
+  background: var(--surface);
+  transition: border-color 0.15s;
+}
+
+.rj-config-row input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.btn-generar {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 9px 20px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  transition: filter 0.15s, transform 0.1s;
+}
+
+.btn-generar:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.rj-mensaje {
+  background: var(--green-light);
+  border: 1px solid #86efac;
+  color: var(--green);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.rj-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rj-header-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 0 0 10px 0;
+  font-weight: 700;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rj-fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.rj-fila input {
+  padding: 10px 13px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--text-heading);
+  background: var(--surface);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.rj-fila input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.rj-acciones {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.btn-manual {
+  background: var(--surface);
+  color: var(--accent);
+  border: 1.5px solid var(--accent-border);
+  padding: 11px 20px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: inherit;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn-manual:hover {
+  background: var(--accent-light);
+  transform: translateY(-1px);
+}
+
+.btn-rifa {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 11px 20px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: inherit;
+  transition: filter 0.15s, transform 0.1s;
+}
+
+.btn-rifa:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .registrar-jugadores {
+    padding: 24px 18px;
+  }
+  .rj-acciones {
+    flex-direction: column;
+  }
+}
