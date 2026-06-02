@@ -1,0 +1,215 @@
+.registrar-partido {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
+}
+
+.registrar-partido .page-header h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.registrar-partido .page-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.rp-aviso {
+  background: var(--amber-light);
+  border: 1px solid #fcd34d;
+  color: var(--amber);
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.rp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.rp-scoreboard {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-columns: 1fr 64px 1fr;
+  overflow: hidden;
+}
+
+.rp-equipo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 22px;
+}
+
+.rp-equipo-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.rp-equipo select {
+  padding: 10px 14px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: var(--surface);
+  color: var(--text-heading);
+  cursor: pointer;
+  transition: border-color 0.15s;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238494b0' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.rp-equipo select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.rp-goles-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.rp-goles {
+  width: 100%;
+  padding: 12px 8px;
+  border: 2px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Mono', monospace;
+  font-size: 3rem;
+  text-align: center;
+  color: var(--text-heading);
+  background: var(--surface);
+  transition: border-color 0.15s, color 0.15s, box-shadow 0.15s;
+  -moz-appearance: textfield;
+  line-height: 1;
+}
+
+.rp-goles::-webkit-inner-spin-button,
+.rp-goles::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.rp-goles:focus {
+  outline: none;
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.rp-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.rp-preview {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 24px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  animation: badgePop 0.18s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+@keyframes badgePop {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+.rp-badge.gana1,
+.rp-badge.gana2 {
+  background: var(--green-light);
+  color: var(--green);
+  border: 1.5px solid #86efac;
+}
+
+.rp-badge.empate {
+  background: var(--amber-light);
+  color: var(--amber);
+  border: 1.5px solid #fcd34d;
+}
+
+.rp-mensaje {
+  background: var(--green-light);
+  border: 1px solid #86efac;
+  color: var(--green);
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.btn-registrar {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 13px 32px;
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: filter 0.15s, transform 0.12s, box-shadow 0.15s;
+  box-shadow: 0 3px 12px rgba(59,126,248,0.3);
+}
+
+.btn-registrar:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59,126,248,0.35);
+}
+
+.btn-registrar:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .registrar-partido {
+    padding: 24px 16px;
+  }
+  .rp-scoreboard {
+    grid-template-columns: 1fr 48px 1fr;
+  }
+  .rp-goles {
+    font-size: 2.2rem;
+  }
+  .rp-equipo {
+    padding: 16px 12px;
+  }
+}
