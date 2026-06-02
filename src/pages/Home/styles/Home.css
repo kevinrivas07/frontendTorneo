@@ -88,6 +88,28 @@
   border-color: var(--accent-border);
 }
 
+.created {
+  position: fixed;
+  bottom: 10px;
+  left: 15px;
+  color: #3333336e;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.created-link {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.created-link:hover,
+.created-link:focus,
+.created-link:visited,
+.created-link:active {
+  color: inherit;
+  text-decoration: none !important;
+}
+
 .card-icon-wrap {
   width: 48px;
   height: 48px;
