@@ -213,3 +213,133 @@
     padding: 16px 12px;
   }
 }
+
+.rp-historial {
+  margin-top: 2rem;
+}
+
+.rp-historial-titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.rp-historial-tabla-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.rp-historial-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.rp-historial-tabla thead tr {
+  background: #f1f5f9;
+}
+
+.rp-historial-tabla th {
+  padding: 10px 14px;
+  text-align: center;
+  font-weight: 600;
+  color: #475569;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.rp-historial-tabla td {
+  padding: 10px 14px;
+  text-align: center;
+  border-top: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.rp-historial-tabla tbody tr:hover {
+  background: #f8fafc;
+}
+
+.rp-score-pill {
+  background: #1e40af;
+  color: #fff;
+  padding: 3px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+.td-resultado { min-width: 100px; }
+.td-acciones { display: flex; gap: 8px; justify-content: center; align-items: center; flex-wrap: wrap; }
+
+.btn-editar {
+  background: #f59e0b;
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.btn-editar:hover { background: #d97706; }
+
+.btn-eliminar {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.btn-eliminar:hover { background: #dc2626; }
+
+.btn-guardar {
+  background: #22c55e;
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.btn-guardar:hover { background: #16a34a; }
+
+.btn-cancelar {
+  background: #94a3b8;
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.btn-cancelar:hover { background: #64748b; }
+
+.rp-edit-score {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+}
+
+.rp-edit-input {
+  width: 52px;
+  text-align: center;
+  padding: 4px 6px;
+  border: 2px solid #3b82f6;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
