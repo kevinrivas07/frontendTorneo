@@ -96,6 +96,17 @@ function TablaPosiciones() {
           </div>
         </div>
       )}
+      <p className="created">
+      Created by:{" "}
+      <a
+        href="https://elmundodelatecnologiaf.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="created-link"
+      >
+        El Mundo de la tecnología
+      </a>
+      </p>
     </div>
   )
 }
