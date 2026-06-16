@@ -9,7 +9,7 @@ function TablaPosiciones() {
 
   const obtenerTabla = async () => {
     setCargando(true)
-    const res = await fetch('http://localhost:5000/api/torneo')
+    const res = await fetch('https://backend-torneo.vercel.app/api/torneo')
     const data = await res.json()
     setTabla(data)
     setCargando(false)

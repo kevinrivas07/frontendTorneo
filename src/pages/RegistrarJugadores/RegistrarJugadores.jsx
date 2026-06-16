@@ -20,7 +20,7 @@ function RegistrarJugadores() {
 
   const guardarManual = async (e) => {
     e.preventDefault()
-    await fetch('http://localhost:5000/api/torneo/manual', {
+    await fetch('https://backend-torneo.vercel.app/api/torneo/manual', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ parejas: datosIngresados })
@@ -33,7 +33,7 @@ function RegistrarJugadores() {
     e.preventDefault()
     const nombres = datosIngresados.map(d => d.jugador)
     const nombresEquipos = datosIngresados.map(d => d.equipo)
-    await fetch('http://localhost:5000/api/torneo/rifar', {
+    await fetch('https://backend-torneo.vercel.app/api/torneo/rifar', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nombres, nombresEquipos })

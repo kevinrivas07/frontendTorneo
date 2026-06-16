@@ -6,7 +6,7 @@ function Home() {
 
   const reiniciarTorneo = async () => {
     if (!window.confirm('¿Seguro que quieres reiniciar el torneo?')) return
-    await fetch('http://localhost:5000/api/torneo/reiniciar', { method: 'DELETE' })
+    await fetch('https://backend-torneo.vercel.app/api/torneo/reiniciar', { method: 'DELETE' })
     alert('Torneo reiniciado')
   }
 

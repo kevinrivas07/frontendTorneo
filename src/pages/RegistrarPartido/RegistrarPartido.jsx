@@ -16,13 +16,13 @@ function RegistrarPartido() {
   useEffect(() => { obtenerTabla(); obtenerPartidos() }, [])
 
   const obtenerTabla = async () => {
-    const res = await fetch('http://localhost:5000/api/torneo')
+    const res = await fetch('https://backend-torneo.vercel.app/api/torneo')
     const data = await res.json()
     setTabla(data)
   }
 
   const obtenerPartidos = async () => {
-    const res = await fetch('http://localhost:5000/api/torneo/partidos')
+    const res = await fetch('https://backend-torneo.vercel.app/api/torneo/partidos')
     const data = await res.json()
     setPartidos(data)
   }
@@ -39,7 +39,7 @@ function RegistrarPartido() {
     if (idEquipo1 === idEquipo2) return alert('Los equipos deben ser diferentes')
 
     const resultado = determinarResultado(golesEquipo1, golesEquipo2)
-    await fetch('http://localhost:5000/api/torneo/partido', {
+    await fetch('https://backend-torneo.vercel.app/api/torneo/partido', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ idEquipo1, idEquipo2, resultado, golesEquipo1: parseInt(golesEquipo1), golesEquipo2: parseInt(golesEquipo2) })
@@ -55,7 +55,7 @@ function RegistrarPartido() {
 
   const eliminarPartido = async (id) => {
     if (!window.confirm('¿Eliminar este partido? Se revertirán los puntos en la tabla.')) return
-    await fetch(`http://localhost:5000/api/torneo/partido/${id}`, { method: 'DELETE' })
+    await fetch(`https://backend-torneo.vercel.app/api/torneo/partido/${id}`, { method: 'DELETE' })
     obtenerTabla()
     obtenerPartidos()
   }
@@ -68,7 +68,7 @@ function RegistrarPartido() {
 
   const guardarEdicion = async (partido) => {
     const resultado = determinarResultado(editGoles1, editGoles2)
-    await fetch(`http://localhost:5000/api/torneo/partido/${partido.id}`, {
+    await fetch(`https://backend-torneo.vercel.app/api/torneo/partido/${partido.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
