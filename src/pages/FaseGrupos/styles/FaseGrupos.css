@@ -1,0 +1,436 @@
+.fase-grupos {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fg-loading {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.fg-aviso {
+  background: var(--accent-light);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  color: var(--text-heading);
+  font-size: 0.9rem;
+}
+
+.fg-setup {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.fg-setup p {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.btn-distribuir {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: opacity 0.15s;
+}
+
+.btn-distribuir:hover { opacity: 0.88; }
+
+.btn-redistribuir {
+  background: var(--surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 9px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.15s;
+}
+
+.btn-redistribuir:hover { background: var(--bg); }
+
+.fg-mensaje {
+  background: var(--green-light);
+  border: 1px solid #86efac;
+  border-radius: var(--radius-sm);
+  padding: 12px 18px;
+  font-size: 0.88rem;
+  color: #166534;
+}
+
+/* Modal */
+.fg-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fg-modal {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  min-width: 320px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.fg-modal h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.fg-modal p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.fg-modal-score {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fg-modal-input {
+  width: 72px;
+  padding: 12px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-heading);
+  background: var(--bg);
+}
+
+.fg-modal-btns {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-guardar {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 9px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.btn-cancelar {
+  background: var(--surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 9px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Tabs */
+.fg-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0;
+}
+
+.fg-tab {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  font-family: 'DM Sans', sans-serif;
+  transition: color 0.15s;
+}
+
+.fg-tab.activo {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Grupos */
+.fg-grupos-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fg-grupo {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.fg-grupo-nombre {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: 0.5px;
+}
+
+.fg-grupo-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.fg-grupo-tabla-wrap {
+  padding: 16px;
+  border-right: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.fg-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.fg-tabla th {
+  padding: 6px 8px;
+  text-align: center;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.fg-tabla td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-body);
+}
+
+.fg-tabla tr.clasifica td {
+  background: rgba(59,126,248,0.05);
+}
+
+.fg-eq-nombre {
+  text-align: left !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fg-clasifica-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.fg-jugador {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.fg-grupo-partidos {
+  padding: 16px;
+}
+
+.fg-grupo-partidos h4 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.fg-partido-fila {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem;
+}
+
+.fg-partido-fila:last-child { border-bottom: none; }
+
+.fg-partido-eq {
+  flex: 1;
+  font-weight: 600;
+  color: var(--text-body);
+}
+
+.fg-partido-score {
+  font-weight: 700;
+  color: var(--text-heading);
+  min-width: 40px;
+  text-align: center;
+}
+
+.fg-partido-fila.jugado .fg-partido-eq {
+  color: var(--text-muted);
+}
+
+.btn-jugar {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  white-space: nowrap;
+}
+
+.fg-partido-ok {
+  color: #16a34a;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.fg-avanzar {
+  background: var(--green-light);
+  border: 1px solid #86efac;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.fg-avanzar p { color: #166534; font-size: 0.9rem; font-weight: 600; }
+
+.fg-acciones-bottom {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Eliminación */
+.fg-elim-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fg-campeon {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #7c2d12;
+  border-radius: var(--radius-lg);
+  padding: 20px 28px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(251,191,36,0.4);
+}
+
+.fg-ronda {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.fg-ronda-titulo {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.fg-elim-partido {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.fg-elim-partido:last-child { border-bottom: none; }
+
+.fg-elim-partido.final {
+  padding: 24px 20px;
+  background: rgba(251,191,36,0.05);
+}
+
+.fg-elim-eq {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.fg-elim-eq.ganador {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.fg-elim-eq small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  display: block;
+}
+
+.fg-elim-score {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--text-heading);
+  min-width: 50px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .fg-grupo-body {
+    grid-template-columns: 1fr;
+  }
+  .fg-grupo-tabla-wrap {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .fg-elim-partido {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

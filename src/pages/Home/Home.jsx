@@ -7,8 +7,23 @@ function Home() {
   const reiniciarTorneo = async () => {
     if (!window.confirm('¿Seguro que quieres reiniciar el torneo?')) return
     await fetch('https://backend-torneo.vercel.app/api/torneo/reiniciar', { method: 'DELETE' })
+    localStorage.removeItem('modalidadTorneo')
+    localStorage.removeItem('gruposTorneo')
+    localStorage.removeItem('faseActual')
+    localStorage.removeItem('eliminatoriaRondas')
     alert('Torneo reiniciado')
   }
+
+  const seleccionarModalidad = (modalidad) => {
+    localStorage.setItem('modalidadTorneo', modalidad)
+    if (modalidad === 'grupos') {
+      navigate('/registrar-jugadores')
+    } else {
+      navigate('/registrar-jugadores')
+    }
+  }
+
+  const modalidadActual = localStorage.getItem('modalidadTorneo')
 
   return (
     <div className="home">
@@ -16,6 +31,33 @@ function Home() {
         <div className="home-hero-label">⚽ FIFA Tournament Manager</div>
         <h1>Gestiona tu Torneo</h1>
         <p>Registra jugadores, carga resultados y consulta la tabla de posiciones en tiempo real.</p>
+      </div>
+
+      <div className="home-modalidad-section">
+        <h2 className="home-modalidad-titulo">Selecciona el tipo de torneo</h2>
+        {modalidadActual && (
+          <div className="home-modalidad-actual">
+            Modalidad activa: <strong>{modalidadActual === 'todos' ? '🔄 Todos contra todos' : '🏆 Fase de grupos + Eliminación directa'}</strong>
+          </div>
+        )}
+        <div className="home-modalidad-btns">
+          <button
+            className={`btn-modalidad ${modalidadActual === 'todos' ? 'activo' : ''}`}
+            onClick={() => seleccionarModalidad('todos')}
+          >
+            <span className="btn-modalidad-icon">🔄</span>
+            <span className="btn-modalidad-titulo">Todos contra todos</span>
+            <span className="btn-modalidad-desc">Cada equipo juega contra todos los demás. Gana quien más puntos acumule.</span>
+          </button>
+          <button
+            className={`btn-modalidad ${modalidadActual === 'grupos' ? 'activo' : ''}`}
+            onClick={() => seleccionarModalidad('grupos')}
+          >
+            <span className="btn-modalidad-icon">🏆</span>
+            <span className="btn-modalidad-titulo">Fase de grupos + Eliminación directa</span>
+            <span className="btn-modalidad-desc">Los equipos se dividen en grupos. Los mejores avanzan a cuartos, semis y final.</span>
+          </button>
+        </div>
       </div>
 
       <div className="home-cards">
@@ -37,6 +79,14 @@ function Home() {
           <p>Consulta el ranking con puntos, goles y diferencia de goles.</p>
           <div className="card-arrow">Ir →</div>
         </div>
+        {modalidadActual === 'grupos' && (
+          <div className="home-card" onClick={() => navigate('/fase-grupos')}>
+            <div className="card-icon-wrap" style={{background:'#f3e8ff'}}>⚡</div>
+            <h3>Fase de Grupos</h3>
+            <p>Consulta los grupos, los partidos programados y el cuadro de eliminación directa.</p>
+            <div className="card-arrow">Ir →</div>
+          </div>
+        )}
       </div>
 
       <div className="home-reset">
