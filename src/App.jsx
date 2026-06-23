@@ -5,6 +5,7 @@ import RegistrarJugadores from './pages/RegistrarJugadores/RegistrarJugadores'
 import RegistrarPartido from './pages/RegistrarPartido/RegistrarPartido'
 import TablaPosiciones from './pages/TablaPosiciones/TablaPosiciones'
 import FaseGrupos from './pages/FaseGrupos/FaseGrupos'
+import CalendarioTodos from './pages/CalendarioTodos/CalendarioTodos'
 import './App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/registrar-partido" element={<RegistrarPartido />} />
           <Route path="/tabla-posiciones" element={<TablaPosiciones />} />
           <Route path="/fase-grupos" element={<FaseGrupos />} />
+          <Route path="/calendario" element={<CalendarioTodos />} />
         </Routes>
       </div>
     </>

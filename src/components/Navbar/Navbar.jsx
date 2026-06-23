@@ -16,7 +16,10 @@ function Navbar() {
         {modalidad === 'grupos' ? (
           <li><NavLink to="/fase-grupos" className={({ isActive }) => isActive ? 'active' : ''}>Grupos ⚡</NavLink></li>
         ) : (
-          <li><NavLink to="/registrar-partido" className={({ isActive }) => isActive ? 'active' : ''}>Partido</NavLink></li>
+          <>
+            <li><NavLink to="/calendario" className={({ isActive }) => isActive ? 'active' : ''}>Calendario</NavLink></li>
+            <li><NavLink to="/registrar-partido" className={({ isActive }) => isActive ? 'active' : ''}>Partido</NavLink></li>
+          </>
         )}
         <li><NavLink to="/tabla-posiciones" className={({ isActive }) => isActive ? 'active' : ''}>Tabla</NavLink></li>
       </ul>

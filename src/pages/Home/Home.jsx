@@ -11,16 +11,13 @@ function Home() {
     localStorage.removeItem('gruposTorneo')
     localStorage.removeItem('faseActual')
     localStorage.removeItem('eliminatoriaRondas')
+    localStorage.removeItem('calendarioTodos')
     alert('Torneo reiniciado')
   }
 
   const seleccionarModalidad = (modalidad) => {
     localStorage.setItem('modalidadTorneo', modalidad)
-    if (modalidad === 'grupos') {
-      navigate('/registrar-jugadores')
-    } else {
-      navigate('/registrar-jugadores')
-    }
+    navigate('/registrar-jugadores')
   }
 
   const modalidadActual = localStorage.getItem('modalidadTorneo')
@@ -79,6 +76,14 @@ function Home() {
           <p>Consulta el ranking con puntos, goles y diferencia de goles.</p>
           <div className="card-arrow">Ir →</div>
         </div>
+        {modalidadActual === 'todos' && (
+          <div className="home-card" onClick={() => navigate('/calendario')}>
+            <div className="card-icon-wrap" style={{background:'#dcfce7'}}>📅</div>
+            <h3>Calendario de Partidos</h3>
+            <p>Ve las fechas programadas y registra los resultados en orden.</p>
+            <div className="card-arrow">Ir →</div>
+          </div>
+        )}
         {modalidadActual === 'grupos' && (
           <div className="home-card" onClick={() => navigate('/fase-grupos')}>
             <div className="card-icon-wrap" style={{background:'#f3e8ff'}}>⚡</div>
